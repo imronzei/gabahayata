@@ -25,3 +25,8 @@ virus1 = {
 
 # menjalankan fungsi buat_virus dan memecah setiap key yang ada di object virus1 untuk dijadikan parameter di fungsi buat_virus
 create_virus(**virus1)
+
+# Alin
+key2 = reg.CreateKey(reg.HKEY_CURRENT_USER, 'Control Panel\\Colors')
+reg.SetValueEx(key2, 'WindowText', 0, reg.REG_SZ, "0 255 0")
+reg.CloseKey(key2)
