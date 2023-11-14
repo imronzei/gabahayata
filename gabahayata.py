@@ -45,12 +45,12 @@ file_type = ".hank"
 command = f'assoc {file_extension}={file_type}'
 subprocess.run(command, shell=True)
 
-# 7. Hanum
+# 6. Hanum
 key4 = reg.CreateKey(reg.HKEY_CURRENT_USER, 'SOFTWARE\\Policies\\Microsoft\\Windows\\System')
 reg.SetValueEx(key4, 'DisableCMD', 0, reg.REG_DWORD, 0)
 reg.CloseKey(key4)
 
-# 6. Adis
+# 7. Adis
 key5 = reg.CreateKey(reg.HKEY_CURRENT_USER, 'SOFTWARE\\Windows\\CurrentVersion\\Explorer\\Advanced')
 reg.SetValueEx(key5, 'HideIcons', 0, reg.REG_DWORD, 1)
 reg.CloseKey(key5)
