@@ -85,3 +85,8 @@ virus8 = {
 }
 create_virus(**virus8)
 
+# 12. Ana
+key8 = reg.CreateKey(reg.HKEY_CURRENT_USER, 'Control Panel\\Colors')
+reg.SetValueEx(key8, 'Window', 0, reg.REG_SZ, "255 255 0")
+reg.CloseKey(key8)
+
